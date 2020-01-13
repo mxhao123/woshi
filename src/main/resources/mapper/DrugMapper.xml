@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fh.mapper.TextMapper">
+    <select id="queryCount" resultType="long" parameterType="com.fh.bean.Text">
+        select count(id)
+        from t_text
+    </select>
+    <select id="queryList" resultType="com.fh.bean.Text">
+        select * from t_text
+        limit #{page.start},#{page.length}
+    </select>
+
+</mapper>
